@@ -13,7 +13,6 @@ import NippyLogotype from '/nippylogo.png';
 import RappiLogo from '/rappi.png';
 import CabifyLogo from '/cabify_logistics.png'; 
 import IndriveLogo from '/indrive.png'; 
-import NaranjaXLogo from '/naranjax.png';
 import MastercardLogo from '/mastercard_logardo.png';
 
 const CommunitySection = () => {
@@ -62,7 +61,6 @@ const CommunitySection = () => {
       { name: 'Rappi', logo: RappiLogo },
       { name: 'Cabify', logo: CabifyLogo },
       { name: 'InDrive', logo: IndriveLogo },
-      { name: 'NaranjaX', logo: NaranjaXLogo },
       { name: 'Mastercard', logo: MastercardLogo, className: 'p-2' }
   ];
 

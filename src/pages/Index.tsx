@@ -6,10 +6,8 @@ import NippySection from '@/components/NippySection';
 import CommunitySection from '@/components/CommunitySection';
 import InfrastructureSection from '@/components/InfrastructureSection';
 import EcosystemSection from '@/components/EcosystemSection';
-import ValidationSection from '@/components/ValidationSection';
-import DominicanRepublicSection from '@/components/DominicanRepublicSection';
-import MastercardSection from '@/components/MastercardSection';
 import FutureSection from '@/components/FutureSection';
+import UalaSection from '@/components/UalaSection';
 
 const Index = () => {
   useEffect(() => {
@@ -30,9 +28,7 @@ const Index = () => {
       <CommunitySection />
       <InfrastructureSection />
       <EcosystemSection />
-      <ValidationSection />
-      <DominicanRepublicSection />
-      <MastercardSection />
+      <UalaSection />
       <FutureSection />
     </div>
   );

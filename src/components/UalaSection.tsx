@@ -1,12 +1,12 @@
-// components/MastercardSection.tsx
+// src/components/UalaSection.tsx
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { ChevronDown, CheckCircle2 } from 'lucide-react';
 
-import NippyLogotype from '/nippylogo_blanco.png';
-import MastercardLogo from '/mastercard_logardo.png';
+import NippyLogotype from '/nippylogo.png'; // Logo oscuro para fondo claro
+import Ualalogo from '/ualaLogo.png';
 
-const MastercardSection = () => {
+const UalaSection = () => {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,8 +52,9 @@ const MastercardSection = () => {
   return (
     <section
       ref={sectionRef}
-      id="mastercard-section"
-      style={{ backgroundColor: 'hsl(var(--primary))' }}
+      id="uala-section"
+      // CAMBIO: Fondo blanco y texto primario
+      style={{ backgroundColor: 'hsl(var(--background))' }}
       className="min-h-screen flex flex-col justify-center px-4 md:px-8 py-24 relative overflow-hidden"
     >
       <div 
@@ -78,14 +79,16 @@ const MastercardSection = () => {
         >
           <div className="flex flex-col justify-center items-center gap-y-6">
             <img 
-              src={MastercardLogo} 
-              alt="Mastercard Logo" 
-              className="w-28 h-auto"
+              src={Ualalogo} 
+              alt="Uala Logo" 
+              // CAMBIO: Logo de Ualá más grande
+              className="w-40 md:w-48 h-auto"
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground leading-tight tracking-tight">
+            {/* CAMBIO: Color de texto para fondo claro */}
+            <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight">
               <Trans
                 i18nKey="mastercard.title"
-                components={{ 1: <span className="text-highlight font-bold" /> }}
+                components={{ 1: <span className="text-uala-blue font-bold" /> }}
               />
             </h2>
           </div>
@@ -99,20 +102,22 @@ const MastercardSection = () => {
           `}
           style={{ transitionDelay: '0.4s' }}
         >
+          {/* CAMBIO: Color de texto para fondo claro */}
           <h3 className="text-xl md:text-2xl font-semibold text-accent mb-6">{t('mastercard.benefits_title')}</h3>
           <ul className="space-y-4 text-left">
             {benefits.map((benefitKey, index) => (
               <li 
                 key={index}
                 className={`
-                  flex items-start gap-3 text-lg md:text-xl text-primary-foreground/90
+                  flex items-start gap-3 text-lg md:text-xl text-foreground/90
                   transition-all duration-700 ease-out transform
                   ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
                 `}
                 style={{ transitionDelay: `${0.6 + index * 0.1}s` }}
               >
                 <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <span>{t(benefitKey)}</span>
+                {/* CAMBIO: Color de texto para fondo claro */}
+                <span className="text-foreground">{t(benefitKey)}</span>
               </li>
             ))}
           </ul>
@@ -121,7 +126,8 @@ const MastercardSection = () => {
 
       <button
         onClick={scrollToNextSection}
-        className="absolute bottom-16 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
+        // CAMBIO: Color de flecha para fondo claro
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors duration-300 animate-bounce-slow z-10"
         aria-label="Scroll down"
       >
         <ChevronDown size={40} strokeWidth={1.5} />
@@ -130,4 +136,4 @@ const MastercardSection = () => {
   );
 };
 
-export default MastercardSection;
+export default UalaSection;

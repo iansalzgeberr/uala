@@ -67,6 +67,9 @@ export default {
 
 				// Highlight Color (Amarillo)
 				'highlight': 'hsl(var(--highlight))',
+        
+        // CAMBIO: Color específico para Ualá
+        'uala-blue': 'hsl(var(--uala-blue))',
 
 				// Sidebar Colors (Keep if relevant to your project)
 				sidebar: {

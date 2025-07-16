@@ -60,6 +60,9 @@ All colors MUST be HSL.
 
     /* Highlight Color: Amarillo #FFC431 (Use strategically for small elements/data) */
     --highlight: 43 100% 60%;
+    
+    /* CAMBIO: Color específico para Ualá */
+    --uala-blue: 351 100% 67%; /* #FF5873 */
 
     /* Destructive */
     --destructive: 0 84% 60%;
